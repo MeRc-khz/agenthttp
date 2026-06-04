@@ -1027,6 +1027,10 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'agenthttp-v2', wiki: wiki.pages.size, graphql: true });
 });
 
+// ─── Paperchasers Multimedia Player ─────────────────────
+const { router: pcPlayer } = require('./paperchasers-player');
+app.use('/player/paperchasers', pcPlayer);
+
 // Load wiki on startup
 wiki.load();
 
@@ -1036,6 +1040,7 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`  AgentHTTP v2 — GraphQL API Server`);
   console.log(`  Port: ${PORT}`);
   console.log(`  GraphQL: http://localhost:${PORT}/graphql`);
+  console.log(`  Player: http://localhost:${PORT}/player/paperchasers`);
   console.log(`  Wiki: ${wiki.pages.size} pages indexed`);
   console.log(`${'═'.repeat(60)}\n`);
 });
