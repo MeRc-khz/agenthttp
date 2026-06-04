@@ -1,17 +1,17 @@
 {
   "name": "agenthttp",
-  "version": "1.0.0",
-  "description": "An HTTP server that is itself an AI agent. Every request enters an agent loop that synthesizes context from the LLM Wiki, MCP tools, session memory, and real-time data — then renders the response as a rich HTML multimedia experience using Canvas 2D and Three.js WebGL.",
-  "main": "renderer.js",
+  "version": "2.0.0",
+  "description": "AgentHTTP v2 — GraphQL API server with agent loop for NeuroCanvas",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
   }
 }
